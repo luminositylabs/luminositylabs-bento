@@ -18,3 +18,6 @@ bootstrap.sh
 Berksfile.lock
 ubuntu/scripts/homestead.sh
 *.log
+
+.idea
+*.iml
