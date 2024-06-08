@@ -7,7 +7,7 @@ virtualbox v7.0.18 (2024-06-08).
 
 ### Current known issues
 
-- rockylinux 9.4 aarch64 currently does not build due to some OS-level package provisioning issue
+- rockylinux 9.4 aarch64 currently does not build due to some OS-level package provisioning issue, but x86_64 work fine 
 
 ### Plugin initialization
 
