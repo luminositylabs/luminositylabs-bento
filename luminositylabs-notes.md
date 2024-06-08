@@ -2,8 +2,12 @@
 
 ## Building the boxes with packer
 
-These notes were last updated to reflect building on macOS Sonoma v14.4.1, packer v1.10.3, parallels v19.3.1, and
-virtualbox v7.0.18 (2024-05-09).
+These notes were last updated to reflect building on macOS Sonoma v14.5, packer v1.11.0, parallels v19.4.0, and
+virtualbox v7.0.18 (2024-06-08).
+
+### Current known issues
+
+- rockylinux 9.4 aarch64 currently does not build due to some OS-level package provisioning issue
 
 ### Plugin initialization
 
