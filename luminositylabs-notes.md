@@ -2,12 +2,12 @@
 
 ## Building the boxes with packer
 
-These notes were last updated to reflect building on macOS Sequoia v15.1.1, packer v1.11.2, parallels v20.1.2, and
- virtualbox v7.1.4 (2024-11-30).
+These notes were last updated to reflect building on macOS Sequoia v15.2, packer v1.11.2, parallels v20.1.2, and
+ virtualbox v7.1.4 (2024-12-13).
 
 ### Current known issues
 
-- [2024-11-12] MacOS v15.1.1 / virtualbox v7.1.4 / AlmaLinux & RockyLinux
+- [2024-12-13] MacOS v15.2 / virtualbox v7.1.4 / AlmaLinux & RockyLinux
 
 The AlmaLinux and RockyLinux boxes build successfully for VirtualBox amd64 platform, but deploying the box with vagrant
  has problems with the VirtualBox Guest Additions.  Getting the additions to work involves installing RPMs after initial
@@ -20,7 +20,7 @@ vagrant reload
 vagrant ssh -c "sudo systemctl status vboxadd"
 ```
 
-- [2024-11-12] MacOS v15.1.1 / virtualbox v7.1.4 / Ubuntu
+- [2024-12-13] MacOS v15.2 / virtualbox v7.1.4 / Ubuntu
 
 The Ubuntu boxes build successfully for Virtualbox, but the Virtualbox Guest Additions are not able to load kernel
  modules in some cases, due to situations where the guest additions setup needed packages which were not installed.
