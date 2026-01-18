@@ -206,26 +206,26 @@ vagrant cloud box create -s "AlmaLinux 10 prepared with packer templates from Ch
 
 2. Create a new version of the box
 ```
-vagrant cloud version create -d "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" luminositylabsllc/bento-almalinux-10 20260115.01
+vagrant cloud version create -d "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" luminositylabsllc/bento-almalinux-10 20260118.01
 ```
 
 3. Create a provider for the version of the box:
 ```
-vagrant cloud provider create luminositylabsllc/bento-almalinux-10 parallels  20260115.01
-vagrant cloud provider create luminositylabsllc/bento-almalinux-10 utm        20260115.01
-vagrant cloud provider create luminositylabsllc/bento-almalinux-10 virtualbox 20260115.01
+vagrant cloud provider create luminositylabsllc/bento-almalinux-10 parallels  20260118.01
+vagrant cloud provider create luminositylabsllc/bento-almalinux-10 utm        20260118.01
+vagrant cloud provider create luminositylabsllc/bento-almalinux-10 virtualbox 20260118.01
 ```
 
 4. Upload the box file for the provider:
 ```
-vagrant cloud provider upload luminositylabsllc/bento-almalinux-10 parallels  20260115.01 amd64 <file>
-vagrant cloud provider upload luminositylabsllc/bento-almalinux-10 utm        20260115.01 amd64 <file>
-vagrant cloud provider upload luminositylabsllc/bento-almalinux-10 virtualbox 20260115.01 amd64 <file>
+vagrant cloud provider upload luminositylabsllc/bento-almalinux-10 parallels  20260118.01 amd64 <file>
+vagrant cloud provider upload luminositylabsllc/bento-almalinux-10 utm        20260118.01 amd64 <file>
+vagrant cloud provider upload luminositylabsllc/bento-almalinux-10 virtualbox 20260118.01 amd64 <file>
 ``` 
 
 5. Release a version:
 ```
-vagrant cloud version release luminositylabsllc/bento-almalinux-10 20260115.01
+vagrant cloud version release luminositylabsllc/bento-almalinux-10 20260118.01
 ```
 
 ***NOTE:*** vagrant also has a "publish" command which combined all the steps above, but only allows a single provider
@@ -235,24 +235,24 @@ what happens if the non-provider related configuration properties change between
 ```
 vagrant cloud publish --architecture amd64 \
                       --description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-                      --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+                      --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
                       --no-private --no-release \
                       --short-description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-                      luminositylabsllc/bento-almalinux-10 20260115.01 parallels builds/build_complete/almalinux-10.1-x86_64.parallels.box
+                      luminositylabsllc/bento-almalinux-10 20260118.01 parallels builds/build_complete/almalinux-10.1-x86_64.parallels.box
                       
 vagrant cloud publish --architecture amd64 \
                       --description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-                      --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+                      --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
                       --no-private --no-release \
                       --short-description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-                      luminositylabsllc/bento-almalinux-10 20260115.01 utm builds/build_complete/almalinux-10.1-x86_64.utm.box
+                      luminositylabsllc/bento-almalinux-10 20260118.01 utm builds/build_complete/almalinux-10.1-x86_64.utm.box
 
 vagrant cloud publish --architecture amd64 \ 
                       --description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-                      --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+                      --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
                       --no-private --no-release  \
                       --short-description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-                      luminositylabsllc/bento-almalinux-10 20260115.01 virtualbox builds/build_complete/almalinux-10.1-x86_64.virtualbox.box
+                      luminositylabsllc/bento-almalinux-10 20260118.01 virtualbox builds/build_complete/almalinux-10.1-x86_64.virtualbox.box
 ```
 
 ### AlmaLinux
@@ -265,12 +265,12 @@ for P in parallels utm virtualbox; do
     time vagrant cloud publish \
         --architecture amd64 \
         --description "AlmaLinux 9 prepared with packer templates from Chef Bento project" \
-        --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+        --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
         --no-private --no-release \
         --short-description "AlmaLinux 9 prepared with packer templates from Chef Bento project" \
-            luminositylabsllc/bento-almalinux-9 20260115.01 ${P} builds/build_complete/almalinux-9.7-x86_64.${P}.box   
+            luminositylabsllc/bento-almalinux-9 20260118.01 ${P} builds/build_complete/almalinux-9.7-x86_64.${P}.box   
 done
-vagrant cloud version release luminositylabsllc/bento-almalinux-9 20260115.01
+vagrant cloud version release luminositylabsllc/bento-almalinux-9 20260118.01
 ```
 
 AlmaLinux9 aarch64
@@ -295,12 +295,12 @@ for P in parallels utm virtualbox; do
     time vagrant cloud publish \
         --architecture amd64 \
         --description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-        --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+        --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
         --no-private --no-release \
         --short-description "AlmaLinux 10 prepared with packer templates from Chef Bento project" \
-            luminositylabsllc/bento-almalinux-10 20260115.01 ${P} builds/build_complete/almalinux-10.1-x86_64.${P}.box   
+            luminositylabsllc/bento-almalinux-10 20260118.01 ${P} builds/build_complete/almalinux-10.1-x86_64.${P}.box   
 done
-vagrant cloud version release luminositylabsllc/bento-almalinux-10 20260115.01
+vagrant cloud version release luminositylabsllc/bento-almalinux-10 20260118.01
 ```
 
 AlmaLinux10 aarch64
@@ -325,12 +325,12 @@ for P in parallels utm virtualbox; do
     time vagrant cloud publish \
         --architecture amd64 \
         --description "RockyLinux 9 prepared with packer templates from Chef Bento project" \
-        --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+        --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
         --no-private --no-release \
         --short-description "RockyLinux 9 prepared with packer templates from Chef Bento project" \
-            luminositylabsllc/bento-rockylinux-9 20260115.01 ${P} builds/build_complete/rockylinux-9.7-x86_64.${P}.box   
+            luminositylabsllc/bento-rockylinux-9 20260118.01 ${P} builds/build_complete/rockylinux-9.7-x86_64.${P}.box   
 done
-vagrant cloud version release luminositylabsllc/bento-rockylinux-9 20260115.01
+vagrant cloud version release luminositylabsllc/bento-rockylinux-9 20260118.01
 ```
 
 RockyLinux9 aarch64
@@ -353,12 +353,12 @@ for P in parallels utm virtualbox; do
     time vagrant cloud publish \
         --architecture amd64 \
         --description "RockyLinux 10 prepared with packer templates from Chef Bento project" \
-        --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+        --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
         --no-private --no-release \
         --short-description "RockyLinux 10 prepared with packer templates from Chef Bento project" \
-            luminositylabsllc/bento-rockylinux-10 20260115.01 ${P} builds/build_complete/rockylinux-10.1-x86_64.${P}.box   
+            luminositylabsllc/bento-rockylinux-10 20260118.01 ${P} builds/build_complete/rockylinux-10.1-x86_64.${P}.box   
 done
-vagrant cloud version release luminositylabsllc/bento-rockylinux-10 20260115.01
+vagrant cloud version release luminositylabsllc/bento-rockylinux-10 20260118.01
 ```
 
 RockyLinux10 aarch64
@@ -383,12 +383,12 @@ for P in parallels utm virtualbox; do
     time vagrant cloud publish \
         --architecture amd64 \
         --description "Ubuntu 24.04 amd64 prepared with packer templates from Chef Bento project" \
-        --version-description "box v20260115.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
+        --version-description "box v20260118.01, packer v1.14.3, parallels v26.2.1, utm v4.7.5, virtualbox v7.2.4" \
         --no-private --no-release \
         --short-description "Ubuntu 24.04 amd64 prepared with packer templates from Chef Bento project" \
-            luminositylabsllc/bento-ubuntu-24.04 20260115.01 ${P} builds/build_complete/ubuntu-24.04-x86_64.${P}.box   
+            luminositylabsllc/bento-ubuntu-24.04 20260118.01 ${P} builds/build_complete/ubuntu-24.04-x86_64.${P}.box   
 done
-vagrant cloud version release luminositylabsllc/bento-ubuntu-24.04 20260115.01
+vagrant cloud version release luminositylabsllc/bento-ubuntu-24.04 20260118.01
 ```
 
 Ubuntu 24.04 aarch64

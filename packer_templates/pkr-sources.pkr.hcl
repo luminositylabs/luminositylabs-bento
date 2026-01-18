@@ -330,7 +330,7 @@ source "parallels-ipsw" "vm" {
   prlctl_post         = var.parallels_prlctl_post
   prlctl_version_file = var.parallels_prlctl_version_file
   # Source block common options
-  boot_command     = var.parallels-ipsw_boot_command == null ? local.default_boot_command : var.parallels_boot_command
+  boot_command     = var.parallels-ipsw_boot_command == null ? local.default_boot_command : var.parallels-ipsw_boot_command
   boot_wait        = var.parallels_boot_wait == null ? local.default_boot_wait : var.parallels_boot_wait
   cpus             = var.cpus
   communicator     = local.communicator
@@ -355,7 +355,7 @@ source "parallels-iso" "vm" {
   prlctl                 = local.parallels_prlctl
   prlctl_version_file    = var.parallels_prlctl_version_file
   # Source block common options
-  boot_command     = var.parallels-iso_boot_command == null ? local.default_boot_command : var.parallels_boot_command
+  boot_command     = var.parallels-iso_boot_command == null ? local.default_boot_command : var.parallels-iso_boot_command
   boot_wait        = var.parallels_boot_wait == null ? local.default_boot_wait : var.parallels_boot_wait
   cd_content       = var.cd_content
   cd_files         = local.cd_files
