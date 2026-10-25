@@ -1,7 +1,7 @@
 os_name                 = "ubuntu"
 os_version              = "26.04"
 os_arch                 = "aarch64"
-iso_url                 = "https://cdimage.ubuntu.com/releases/resolute/release/ubuntu-26.04-live-server-arm64.iso"
+iso_url                 = "https://cdimage.ubuntu.com/releases/resolute/release/ubuntu-26.04.1-live-server-arm64.iso"
 iso_checksum            = "file:https://cdimage.ubuntu.com/releases/resolute/release/SHA256SUMS"
 parallels_guest_os_type = "ubuntu"
 vbox_guest_os_type      = "Ubuntu_arm64"
